@@ -35,7 +35,7 @@ def main():
     df = ip_features()
     st.write("The input features you've given are :") 
     st.write(df)
-    DF = pd.read_csv("C:\\Users\\Vivek Nag Kanuri\\Downloads\\train_dataset.csv")
+    DF = pd.read_csv("x_test.csv")
     x = DF[['april_max_temp','april_min_temp','august_avg_temp','august_max_temp','days_above_90F','january_avg_temp','july_avg_temp','july_min_temp','june_avg_temp','september_min_temp']]
     y = DF['site_eui']
     model.fit(x,y)
