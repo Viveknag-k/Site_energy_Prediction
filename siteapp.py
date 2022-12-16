@@ -1,11 +1,10 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
-
+import pandas as pd
 import pickle
-model=pickle.load(open("l.pkl","rb"))
-st.header(" Site Energy Prediction")
-st.write("Give the Input Parameters")
+model = pickle.load(open("l.pkl","rb"))
+st.header("Site Energy Prediction")
+st.write("Give the input features :")
 def ip_features():
     april_max_temp = st.number_input('april_max_temp')
     april_min_temp = st.number_input('april_min_temp')
@@ -30,7 +29,6 @@ def ip_features():
             'september_min_temp':september_min_temp}
     features = pd.DataFrame(data, index=[0])
     return features
-
 def main():
     df = ip_features()
     st.write("The input features you've given are :") 
@@ -42,7 +40,5 @@ def main():
     if st.button('Predict'):
         pred = model.predict(df)
         st.success("The site energy for given input data is {}:".format(pred))
-
 if __name__ == '__main__':
     main()
-
