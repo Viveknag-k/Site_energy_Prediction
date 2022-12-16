@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 import pickle 
-model=pickle.load(open("l.pkl","rb"))
+model = pickle.load(open('l.pkl','rb'))
 st.header("Site Energy Prediction")
 st.write("Give the input features :")
 def ip_features():
