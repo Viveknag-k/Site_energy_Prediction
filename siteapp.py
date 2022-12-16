@@ -36,7 +36,7 @@ def main():
     DF = pd.read_csv("x_test.csv")
     x = DF[['april_max_temp','april_min_temp','august_avg_temp','august_max_temp','days_above_90F','january_avg_temp','july_avg_temp','july_min_temp','june_avg_temp','september_min_temp']]
     y = DF['site_eui']
-    model.fit(x,y)
+   # model.fit(x,y)
     if st.button('Predict'):
         pred = model.predict(df)
         st.success("The site energy for given input data is {}:".format(pred))
